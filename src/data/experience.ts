@@ -1,0 +1,72 @@
+export const experiences = [
+  {
+    id: 1,
+    role: "React.js Intern",
+    company: "Tech Elecon Pvt. Ltd.",
+    location: "Anand, Gujarat",
+    duration: "Jan 2026 – Apr 2026",
+    type: "Internship",
+    rank: "A-RANK",
+    color: "#6366f1",
+    description:
+      "Worked as a React.js intern and single-handedly built a full-stack Project Management System — a Jira/Linear-style tool used in real production workflows.",
+    highlights: [
+      "Built real-time chat using Socket.IO with room-based messaging",
+      "Implemented Google OAuth + Nodemailer for auth and notifications",
+      "Designed role-based UI for Admin, Manager, Developer, Designer & Client",
+      "Created reusable ShadCN component library (30+ components)",
+      "Integrated sprint planning, bug tracking & progress visualization",
+      "Deployed frontend on Vercel, backend on Render with MongoDB Atlas",
+    ],
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Tailwind",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Zustand",
+    ],
+  },
+];
+
+export const educationData = [
+  {
+    id: 1,
+    degree: "B.Tech — Information Technology",
+    institution: "G H Patel College of Engineering & Technology",
+    location: "Anand, Gujarat",
+    duration: "2022 – 2026",
+    grade: "CGPA: 9.09 / 10.0",
+    rank: "S-RANK",
+    color: "#8b5cf6",
+    highlights: [
+      "Coursework: DSA, DBMS, AI/ML, Web Dev, Computer Networks",
+      "Languages studied: C, C++, Java, Python",
+      "Consistent academic performer throughout 4 years",
+    ],
+  },
+  {
+    id: 2,
+    degree: "HSC — Science (12th Standard)",
+    institution: "St. Xavier's High School, Gamdi",
+    location: "Anand, Gujarat",
+    duration: "2021 – 2022",
+    grade: "81.34%",
+    rank: "B-RANK",
+    color: "#a78bfa",
+    highlights: ["Physics, Chemistry, Mathematics & Computer Science"],
+  },
+  {
+    id: 3,
+    degree: "SSC (10th Standard)",
+    institution: "St. Xavier's High School, Gamdi",
+    location: "Anand, Gujarat",
+    duration: "2019 – 2020",
+    grade: "84.68%",
+    rank: "B-RANK",
+    color: "#c4b5fd",
+    highlights: ["Strong foundation in Mathematics and Science"],
+  },
+];

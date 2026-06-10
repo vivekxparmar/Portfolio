@@ -1,0 +1,80 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Project Management System",
+    subtitle: "Jira / Linear-style PMS",
+    description:
+      "A full-stack real-time project management system built during my internship at Tech Elecon. Supports sprint planning, bug tracking, real-time chat, role-based dashboards, and Google OAuth.",
+    longDesc: [
+      "Real-time chat with Socket.IO room-based messaging",
+      "Role-based UI: Admin, Manager, Developer, Designer, Client",
+      "Sprint planning, task & bug tracking with progress charts",
+      "Google OAuth + Nodemailer email notifications",
+      "30+ reusable ShadCN components",
+      "Deployed: Vercel (frontend) + Render (backend) + MongoDB Atlas",
+    ],
+    stack: [
+      "React 19",
+      "TypeScript",
+      "Tailwind",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Zustand",
+      "ShadCN",
+    ],
+    github: "https://github.com/vivekxparmar",
+    live: "",
+    color: "#6366f1",
+    accent: "#8b5cf6",
+    rank: "S-RANK",
+    size: "large",
+    icon: "MdDashboard", // Store as string
+    kanji: "管",
+  },
+  {
+    id: 2,
+    title: "E-Commerce Web App",
+    subtitle: "Men's Ethnic Wear Store",
+    description:
+      "A stylish e-commerce website for men's ethnic wear, showcasing traditional and modern outfits with a clean product catalog UI.",
+    longDesc: [
+      "Product catalog with category filters",
+      "Responsive design across all devices",
+      "PHP backend with form handling",
+      "Custom CSS animations and transitions",
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "PHP"],
+    github: "https://github.com/vivekxparmar",
+    live: "",
+    color: "#8b5cf6",
+    accent: "#a78bfa",
+    rank: "A-RANK",
+    size: "small",
+    icon: "MdShoppingCart", // Store as string
+    kanji: "商",
+  },
+  {
+    id: 3,
+    title: "Shinobi Dev Portfolio",
+    subtitle: "This Portfolio Website",
+    description:
+      "An anime-inspired glassmorphism portfolio built with React, TypeScript, Framer Motion, and Tailwind CSS. Every section hand-crafted.",
+    longDesc: [
+      "Glassmorphism + dark theme + anime aesthetic",
+      "Framer Motion scroll animations",
+      "Particle background with tsParticles",
+      "Fully responsive across all breakpoints",
+    ],
+    stack: ["React", "TypeScript", "Tailwind", "Framer Motion", "Vite"],
+    github: "https://github.com/vivekxparmar",
+    live: "",
+    color: "#a78bfa",
+    accent: "#c4b5fd",
+    rank: "A-RANK",
+    size: "small",
+    icon: "MdCode", // Store as string
+    kanji: "忍",
+  },
+];
