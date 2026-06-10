@@ -54,7 +54,7 @@ export const educationData = [
     location: "Anand, Gujarat",
     duration: "2021 – 2022",
     grade: "81.34%",
-    rank: "B-RANK",
+    rank: "A-RANK",
     color: "#a78bfa",
     highlights: ["Physics, Chemistry, Mathematics & Computer Science"],
   },
