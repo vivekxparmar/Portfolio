@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 // import { SiGmail } from "react-icons/si";
 import { AiOutlineMail } from "react-icons/ai";
+import resume from "../../assets/resume.pdf";
 
 const contactLinks = [
   {
@@ -316,7 +317,7 @@ export default function Contact() {
 
             {/* Resume download card */}
             <motion.a
-              href="/resume.pdf"
+              href={resume}
               target="_blank"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
