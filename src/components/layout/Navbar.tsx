@@ -21,6 +21,32 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbar = document.querySelector("header");
+      const navbarHeight = navbar ? navbar.offsetHeight : 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleMobileNavClick = (href: string) => {
+    const sectionId = href.replace("#", "");
+    // Close menu first
+    setMenuOpen(false);
+    // Small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 100);
+  };
+
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -28,7 +54,7 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[rgba(15,15,35,0.55)] backdrop-blur-lg  py-4"
+          ? "bg-[rgba(15,15,35,0.55)] backdrop-blur-lg py-4"
           : "bg-transparent py-6"
       }`}
       style={
@@ -37,16 +63,21 @@ export default function Navbar() {
               background: "rgba(15, 15, 35, 0.55)",
               backdropFilter: "blur(10px)",
               WebkitBackdropFilter: "blur(10px)",
-              // borderBottom: "1px solid rgba(99, 102, 241, 0.2)",
             }
           : {}
       }
     >
-      {/* Centered container */}
       <div className="w-full flex justify-center px-4 sm:px-6">
         <div className="w-full max-w-6xl flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 group shrink-0">
+          <a
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("hero");
+            }}
+            className="flex items-center gap-2 group shrink-0 cursor-pointer"
+          >
             <span
               className="text-xl font-bold text-white"
               style={{
@@ -72,7 +103,11 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200 relative group py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(link.href.replace("#", ""));
+                }}
+                className="text-sm text-slate-400 hover:text-indigo-400 transition-colors duration-200 relative group py-2 cursor-pointer"
                 style={{
                   fontFamily: "Rajdhani, sans-serif",
                   fontWeight: 500,
@@ -83,17 +118,14 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all duration-300 rounded-full" />
               </a>
             ))}
-            {/* Resume button */}
             <a
               href={resume}
               target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:inline-flex px-4 py-2 rounded-lg border border-indigo-500/50 text-indigo-400 text-sm hover:bg-indigo-500/10 hover:border-indigo-400 transition-all duration-300"
               style={{
                 fontFamily: "Rajdhani, sans-serif",
                 fontWeight: 600,
-                boxShadow: scrolled
-                  ? "0 0 20px rgba(99, 102, 241, 0.4)"
-                  : "none",
               }}
             >
               Resume
@@ -128,7 +160,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-4"
             style={{
-              background: "rgba(15, 15, 35, 0.55)",
+              background: "rgba(15, 15, 35, 0.95)",
               backdropFilter: "blur(16px)",
               WebkitBackdropFilter: "blur(16px)",
               borderTop: "1px solid rgba(99, 102, 241, 0.2)",
@@ -136,23 +168,23 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center px-6 py-8 gap-6">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-slate-300 hover:text-indigo-400 transition-colors py-2 text-base"
+                  onClick={() => handleMobileNavClick(link.href)}
+                  className="text-slate-300 hover:text-indigo-400 transition-colors py-2 text-base cursor-pointer w-full text-center"
                   style={{
                     fontFamily: "Rajdhani, sans-serif",
                     fontWeight: 500,
                   }}
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <a
                 href={resume}
                 target="_blank"
-                className="px-6 py-2.5 rounded-lg border border-indigo-500/50 text-indigo-400 text-center hover:bg-indigo-500/10 mt-2"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 rounded-lg border border-indigo-500/50 text-indigo-400 text-center hover:bg-indigo-500/10 mt-2 w-full"
               >
                 Resume
               </a>
