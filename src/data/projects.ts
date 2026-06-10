@@ -24,13 +24,13 @@ export const projects = [
       "Zustand",
       "ShadCN",
     ],
-    github: "https://github.com/vivekxparmar",
-    live: "",
+    github: "https://github.com/vivekxparmar/Project-Management-System",
+    live: "https://sprintforge-ten.vercel.app",
     color: "#6366f1",
     accent: "#8b5cf6",
     rank: "S-RANK",
     size: "large",
-    icon: "MdDashboard", // Store as string
+    icon: "MdDashboard",
     kanji: "管",
   },
   {
@@ -46,13 +46,13 @@ export const projects = [
       "Custom CSS animations and transitions",
     ],
     stack: ["HTML", "CSS", "JavaScript", "PHP"],
-    github: "https://github.com/vivekxparmar",
+    github: "https://github.com/vivekxparmar/Mens-Ethnic-Wear-Website",
     live: "",
     color: "#8b5cf6",
     accent: "#a78bfa",
     rank: "A-RANK",
     size: "small",
-    icon: "MdShoppingCart", // Store as string
+    icon: "MdShoppingCart",
     kanji: "商",
   },
   {
@@ -68,13 +68,13 @@ export const projects = [
       "Fully responsive across all breakpoints",
     ],
     stack: ["React", "TypeScript", "Tailwind", "Framer Motion", "Vite"],
-    github: "https://github.com/vivekxparmar",
+    github: "https://github.com/vivekxparmar/Portfolio",
     live: "",
     color: "#a78bfa",
     accent: "#c4b5fd",
     rank: "A-RANK",
     size: "small",
-    icon: "MdCode", // Store as string
+    icon: "MdCode",
     kanji: "忍",
   },
 ];

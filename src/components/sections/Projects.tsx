@@ -51,7 +51,7 @@ function ProjectModal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
       style={{ background: "rgba(5,5,8,0.85)", backdropFilter: "blur(12px)" }}
       onClick={onClose}
     >
@@ -60,10 +60,25 @@ function ProjectModal({
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.85, opacity: 0, y: 40 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="glass rounded-2xl p-8 max-w-2xl w-full relative overflow-hidden"
+        className="glass rounded-2xl p-5 sm:p-8 w-full relative overflow-hidden max-w-[95%] sm:max-w-2xl max-h-[90vh] overflow-y-auto"
         style={{ border: `1px solid ${project.color}40` }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Custom scrollbar */}
+        <style>{`
+          .modal-content::-webkit-scrollbar {
+            width: 4px;
+          }
+          .modal-content::-webkit-scrollbar-track {
+            background: rgba(15,15,35,0.3);
+            border-radius: 4px;
+          }
+          .modal-content::-webkit-scrollbar-thumb {
+            background: ${project.color};
+            border-radius: 4px;
+          }
+        `}</style>
+
         {/* Glow */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -72,9 +87,9 @@ function ProjectModal({
           }}
         />
 
-        {/* Kanji watermark */}
+        {/* Kanji watermark - smaller on mobile */}
         <span
-          className="absolute -right-4 -bottom-4 text-[140px] font-bold pointer-events-none select-none"
+          className="absolute -right-4 -bottom-4 text-[80px] sm:text-[140px] font-bold pointer-events-none select-none"
           style={{
             fontFamily: "serif",
             color: project.color,
@@ -85,10 +100,10 @@ function ProjectModal({
           {project.kanji}
         </span>
 
-        {/* Close button */}
+        {/* Close button - adjusted for mobile */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors z-10"
           style={{
             background: "rgba(99,102,241,0.1)",
             border: "1px solid rgba(99,102,241,0.2)",
@@ -97,10 +112,10 @@ function ProjectModal({
           ✕
         </button>
 
-        {/* Header */}
-        <div className="flex items-start gap-4 mb-6">
+        {/* Header - responsive sizes */}
+        <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6 pr-6 sm:pr-8">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shrink-0"
+            className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center text-lg sm:text-2xl shrink-0"
             style={{
               background: `${project.color}15`,
               border: `1px solid ${project.color}40`,
@@ -109,7 +124,7 @@ function ProjectModal({
           >
             {IconComponent && (
               <IconComponent
-                className="w-7 h-7"
+                className="w-5 h-5 sm:w-7 sm:h-7"
                 style={{ color: project.color }}
               />
             )}
@@ -117,7 +132,7 @@ function ProjectModal({
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span
-                className="text-xs font-bold px-2 py-0.5 rounded-md"
+                className="text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded-md"
                 style={{
                   background: `${project.color}20`,
                   color: project.color,
@@ -129,26 +144,26 @@ function ProjectModal({
               </span>
             </div>
             <h3
-              className="text-2xl font-bold text-white"
+              className="text-base sm:text-2xl font-bold text-white"
               style={{ fontFamily: "Rajdhani, sans-serif" }}
             >
               {project.title}
             </h3>
-            <p className="text-sm" style={{ color: project.color }}>
+            <p className="text-xs sm:text-sm" style={{ color: project.color }}>
               {project.subtitle}
             </p>
           </div>
         </div>
 
-        {/* Description */}
-        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+        {/* Description - responsive text */}
+        <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
           {project.description}
         </p>
 
         {/* Highlights */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <p
-            className="text-xs tracking-widest uppercase mb-3"
+            className="text-[10px] sm:text-xs tracking-widest uppercase mb-2 sm:mb-3"
             style={{
               color: project.color,
               fontFamily: "JetBrains Mono, monospace",
@@ -156,29 +171,29 @@ function ProjectModal({
           >
             — Key Features
           </p>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-1.5 sm:gap-2">
             {project.longDesc.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2.5 text-sm text-slate-300"
+                className="flex items-start gap-2 text-xs sm:text-sm text-slate-300"
               >
                 <span
-                  className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
+                  className="mt-1 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full shrink-0"
                   style={{
                     background: project.color,
                     boxShadow: `0 0 6px ${project.color}`,
                   }}
                 />
-                {item}
+                <span className="flex-1">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Stack */}
-        <div className="mb-7">
+        <div className="mb-4 sm:mb-7">
           <p
-            className="text-xs tracking-widest uppercase mb-3"
+            className="text-[10px] sm:text-xs tracking-widest uppercase mb-2 sm:mb-3"
             style={{
               color: project.color,
               fontFamily: "JetBrains Mono, monospace",
@@ -186,11 +201,11 @@ function ProjectModal({
           >
             — Tech Stack
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {project.stack.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 rounded-lg text-xs"
+                className="px-2 sm:px-3 py-1 rounded-lg text-[10px] sm:text-xs"
                 style={{
                   background: `${project.color}12`,
                   border: `1px solid ${project.color}30`,
@@ -204,13 +219,13 @@ function ProjectModal({
           </div>
         </div>
 
-        {/* Links */}
-        <div className="flex gap-3">
+        {/* Links - stack vertically on mobile */}
+        <div className="flex flex-col sm:flex-row gap-3">
           <a
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105"
+            className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             style={{
               background: `${project.color}15`,
               border: `1px solid ${project.color}40`,
@@ -226,7 +241,7 @@ function ProjectModal({
               href={project.live}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               style={{
                 background: `${project.color}25`,
                 border: `1px solid ${project.color}60`,
@@ -373,12 +388,12 @@ export default function Projects() {
                       >
                         {project.rank}
                       </span>
-                      <p
+                      {/* <p
                         className="text-xs text-slate-500"
                         style={{ fontFamily: "JetBrains Mono, monospace" }}
                       >
                         {project.subtitle}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
 
@@ -387,7 +402,7 @@ export default function Projects() {
                     className="text-xs text-slate-600 group-hover:text-indigo-400 transition-colors flex items-center gap-1"
                     style={{ fontFamily: "JetBrains Mono, monospace" }}
                   >
-                    view details →
+                    view
                   </span>
                 </div>
 
@@ -552,7 +567,7 @@ export default function Projects() {
                       className="text-xs text-slate-600 group-hover:text-indigo-400 transition-colors"
                       style={{ fontFamily: "JetBrains Mono, monospace" }}
                     >
-                      view →
+                      view
                     </span>
                   </div>
 
@@ -614,9 +629,6 @@ export default function Projects() {
           >
             <GithubIcon />
             View All Projects on GitHub
-            <span className="group-hover:translate-x-1 transition-transform duration-200">
-              →
-            </span>
           </a>
         </motion.div>
       </div>

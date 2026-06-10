@@ -9,7 +9,10 @@ export default function Education() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="education" className="relative py-10 overflow-hidden">
+    <section
+      id="education"
+      className="relative py-10 md:py-10 lg:py-10 overflow-hidden"
+    >
       {/* bg glow */}
       <div
         className="absolute bottom-0 right-0 w-96 h-96 pointer-events-none opacity-20"
@@ -21,7 +24,7 @@ export default function Education() {
       />
 
       <div
-        className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 lg:px-12"
+        className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12"
         ref={ref}
       >
         {/* Section title */}
@@ -29,7 +32,7 @@ export default function Education() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 md:mb-16 text-center"
         >
           <p
             className="text-indigo-400 text-xs tracking-[0.3em] uppercase mb-3"
@@ -129,30 +132,51 @@ export default function Education() {
                     </span>
 
                     <h3
-                      className="text-xl sm:text-2xl font-bold text-white mb-1"
+                      className="text-xl sm:text-2xl font-bold text-white mb-2"
                       style={{ fontFamily: "Rajdhani, sans-serif" }}
                     >
                       {edu.degree}
                     </h3>
 
-                    <p
-                      className="text-sm font-medium mb-0.5 flex items-center gap-1.5"
+                    {/* Institution with FIXED icon size - using inline styles to force size */}
+                    <div
+                      className="flex items-center gap-2 mb-1.5"
                       style={{ color: edu.color }}
                     >
-                      <MdSchool className="w-4 h-4" />
-                      {edu.institution}
-                    </p>
-                    <p className="text-xs text-slate-500 flex items-center gap-1.5">
-                      <MdLocationOn className="w-3 h-3" />
-                      {edu.location}
-                    </p>
+                      <MdSchool
+                        style={{
+                          width: "16px",
+                          height: "16px",
+                          minWidth: "16px",
+                          minHeight: "16px",
+                        }}
+                      />
+                      <span className="text-sm font-medium">
+                        {edu.institution}
+                      </span>
+                    </div>
+
+                    {/* Location with FIXED icon size - using inline styles to force size */}
+                    <div className="flex items-center gap-2">
+                      <MdLocationOn
+                        style={{
+                          width: "14px",
+                          height: "14px",
+                          minWidth: "14px",
+                          minHeight: "14px",
+                        }}
+                      />
+                      <span className="text-xs text-slate-500">
+                        {edu.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
                 {/* Right — duration + grade */}
                 <div className="flex flex-col items-end gap-2 shrink-0">
                   <span
-                    className="px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5 whitespace-nowrap"
                     style={{
                       background: "rgba(15,15,35,0.8)",
                       border: "1px solid rgba(99,102,241,0.2)",
@@ -163,7 +187,7 @@ export default function Education() {
                     <FaCalendarAlt className="w-3 h-3" /> {edu.duration}
                   </span>
                   <span
-                    className="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 whitespace-nowrap"
                     style={{
                       background: `${edu.color}15`,
                       border: `1px solid ${edu.color}40`,
@@ -178,7 +202,7 @@ export default function Education() {
               </div>
 
               {/* Highlights */}
-              {edu.highlights.length > 0 && (
+              {edu.highlights && edu.highlights.length > 0 && (
                 <div className="mt-5 pt-5 border-t border-indigo-500/10">
                   <ul className="flex flex-wrap gap-x-6 gap-y-2">
                     {edu.highlights.map((h, idx) => (

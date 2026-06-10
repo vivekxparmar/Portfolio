@@ -6,6 +6,7 @@ export const skillCategories = [
     color: "#6366f1",
     skills: [
       { name: "React", icon: "SiReact", color: "#61DAFB" },
+      { name: "Redux", icon: "SiRedux", color: "#764ABC" },
       { name: "TypeScript", icon: "SiTypescript", color: "#3178C6" },
       { name: "JavaScript", icon: "SiJavascript", color: "#F7DF1E" },
       { name: "HTML5", icon: "SiHtml5", color: "#E34F26" },
@@ -65,7 +66,6 @@ export const growthSkills = [
     color: "#ffffff",
     status: "learning",
   },
-  { name: "Redux", icon: "SiRedux", color: "#764ABC", status: "learning" },
   { name: "Docker", icon: "SiDocker", color: "#2496ED", status: "learning" },
   { name: "GraphQL", icon: "SiGraphql", color: "#E10098", status: "goal" },
   {
@@ -74,5 +74,4 @@ export const growthSkills = [
     color: "#FF9900",
     status: "goal",
   },
-  { name: "Figma", icon: "SiFigma", color: "#F24E1E", status: "learning" },
 ];

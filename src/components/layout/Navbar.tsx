@@ -27,8 +27,20 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "glass py-4!" : "bg-transparent py-6!"
+        scrolled
+          ? "bg-[rgba(15,15,35,0.55)] backdrop-blur-lg  py-4"
+          : "bg-transparent py-6"
       }`}
+      style={
+        scrolled
+          ? {
+              background: "rgba(15, 15, 35, 0.55)",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+              // borderBottom: "1px solid rgba(99, 102, 241, 0.2)",
+            }
+          : {}
+      }
     >
       {/* Centered container */}
       <div className="w-full flex justify-center px-4 sm:px-6">
@@ -36,10 +48,12 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2 group shrink-0">
             <span
-              className="text-xl font-bold text-white glow-text"
+              className="text-xl font-bold text-white"
               style={{
                 fontFamily: "Rajdhani, sans-serif",
                 letterSpacing: "0.05em",
+                textShadow:
+                  "0 0 20px rgba(99, 102, 241, 0.8), 0 0 40px rgba(99, 102, 241, 0.4)",
               }}
             >
               VP<span className="text-indigo-400">.</span>
@@ -73,8 +87,14 @@ export default function Navbar() {
             <a
               href={resume}
               target="_blank"
-              className="hidden md:inline-flex px-2! py-2 rounded-lg border border-indigo-500/50 text-indigo-400 text-sm hover:bg-indigo-500/10 hover:border-indigo-400 transition-all duration-300 glow shrink-0"
-              style={{ fontFamily: "Rajdhani, sans-serif", fontWeight: 600 }}
+              className="hidden md:inline-flex px-4 py-2 rounded-lg border border-indigo-500/50 text-indigo-400 text-sm hover:bg-indigo-500/10 hover:border-indigo-400 transition-all duration-300"
+              style={{
+                fontFamily: "Rajdhani, sans-serif",
+                fontWeight: 600,
+                boxShadow: scrolled
+                  ? "0 0 20px rgba(99, 102, 241, 0.4)"
+                  : "none",
+              }}
             >
               Resume
             </a>
@@ -106,7 +126,13 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-indigo-500/20 mt-4"
+            className="md:hidden mt-4"
+            style={{
+              background: "rgba(15, 15, 35, 0.55)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderTop: "1px solid rgba(99, 102, 241, 0.2)",
+            }}
           >
             <div className="flex flex-col items-center px-6 py-8 gap-6">
               {navLinks.map((link) => (

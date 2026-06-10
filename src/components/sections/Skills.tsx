@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   SiReact,
+  SiRedux,
   SiTypescript,
   SiJavascript,
   SiHtml5,
@@ -25,7 +26,6 @@ import {
   SiRender,
   SiVite,
   SiNextdotjs,
-  SiRedux,
   SiDocker,
   SiGraphql,
   SiFigma,
@@ -37,6 +37,7 @@ import { skillCategories, growthSkills } from "../../data/skills";
 // Icon map
 const iconMap: Record<string, React.ElementType> = {
   SiReact,
+  SiRedux,
   SiTypescript,
   SiJavascript,
   SiHtml5,
@@ -61,7 +62,6 @@ const iconMap: Record<string, React.ElementType> = {
   SiVite,
   SiVisualstudiocode: DiVisualstudio,
   SiNextdotjs,
-  SiRedux,
   SiDocker,
   SiGraphql,
   SiAmazonwebservices: FaAws,

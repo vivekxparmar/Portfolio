@@ -2,7 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MdEmail, MdFileDownload } from "react-icons/md";
-import { FaLinkedin, FaGithub, FaCheckCircle, FaBolt } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaCheckCircle,
+  FaBolt,
+  FaSearch,
+} from "react-icons/fa";
 // import { SiGmail } from "react-icons/si";
 import { AiOutlineMail } from "react-icons/ai";
 
@@ -142,25 +148,25 @@ export default function Contact() {
               {/* Email copy button */}
               <button
                 onClick={copyEmail}
-                className="w-full flex items-center justify-between px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.01]"
+                className="w-full flex items-center justify-between px-4 sm:px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.01]"
                 style={{
                   background: "rgba(99,102,241,0.08)",
                   border: "1px solid rgba(99,102,241,0.25)",
                 }}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-indigo-400">
+                <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                  <span className="text-indigo-400 shrink-0">
                     <MdEmail className="w-5 h-5" />
                   </span>
                   <span
-                    className="text-sm text-slate-300"
+                    className="text-xs sm:text-sm text-slate-300 truncate"
                     style={{ fontFamily: "JetBrains Mono, monospace" }}
                   >
                     parmarvivek04102004@gmail.com
                   </span>
                 </div>
                 <span
-                  className="text-xs px-2.5 py-1 rounded-lg transition-all duration-300"
+                  className="text-xs px-2 sm:px-2.5 py-1 rounded-lg transition-all duration-300 shrink-0 ml-2"
                   style={{
                     background: copied
                       ? "rgba(74,222,128,0.15)"
@@ -236,10 +242,11 @@ export default function Contact() {
             className="flex flex-col gap-4"
           >
             <p
-              className="text-xs text-indigo-400 tracking-widest uppercase mb-2 text-center lg:text-left"
+              className="text-xs text-indigo-400 tracking-widest uppercase mb-2 text-center lg:text-left flex items-center justify-center lg:justify-start gap-2"
               style={{ fontFamily: "JetBrains Mono, monospace" }}
             >
-              — Find Me On
+              <FaSearch className="w-3 h-3" />
+              Find Me On
             </p>
 
             {contactLinks.map((link, i) => (

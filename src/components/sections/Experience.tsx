@@ -239,35 +239,40 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
-          className="glass rounded-2xl p-6 border border-dashed border-indigo-500/25 flex items-center gap-5"
+          className="glass rounded-2xl p-6 border border-dashed border-indigo-500/25 flex flex-col gap-4"
         >
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-xl"
-            style={{
-              background: "rgba(99,102,241,0.1)",
-              border: "1px solid rgba(99,102,241,0.2)",
-            }}
-          >
-            <GiEyeTarget />
-          </div>
-          <div>
+          {/* Top row - Icon and Title */}
+          <div className="flex items-center gap-4">
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 text-xl"
+              style={{
+                background: "rgba(99,102,241,0.1)",
+                border: "1px solid rgba(99,102,241,0.2)",
+              }}
+            >
+              <GiEyeTarget />
+            </div>
             <p
-              className="text-white font-semibold text-sm mb-0.5"
+              className="text-white font-semibold text-sm"
               style={{ fontFamily: "Rajdhani, sans-serif" }}
             >
-              Next Mission — Unlocking Soon
-            </p>
-            <p
-              className="text-slate-500 text-xs"
-              style={{ fontFamily: "JetBrains Mono, monospace" }}
-            >
-              Actively seeking full-time frontend / full-stack roles · Open to
-              in person, remote & hybrid
+              Next Mission - Unlocking Soon
             </p>
           </div>
-          <div className="ml-auto">
+
+          {/* Middle - Description */}
+          <p
+            className="text-slate-500 text-xs leading-relaxed"
+            style={{ fontFamily: "JetBrains Mono, monospace" }}
+          >
+            Actively seeking full-time frontend / full-stack roles · Open to in
+            person, remote & hybrid
+          </p>
+
+          {/* Bottom - Status */}
+          <div className="flex justify-start">
             <span
-              className="flex items-center gap-1.5 text-xs text-green-400 px-3 py-1.5 rounded-lg"
+              className="flex items-center gap-1.5 text-xs text-green-400 px-3 py-1.5 rounded-lg w-fit"
               style={{
                 background: "rgba(74,222,128,0.1)",
                 border: "1px solid rgba(74,222,128,0.2)",

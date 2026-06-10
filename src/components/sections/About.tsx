@@ -6,7 +6,7 @@ const traits = [
     kanji: "速",
     romaji: "HAYA",
     meaning: "Fast Learner",
-    desc: "I pick up new frameworks and tools quickly — AI-assisted, always evolving.",
+    desc: "I pick up new frameworks and tools quickly; AI-assisted, always evolving.",
     color: "#6366f1",
   },
   {
@@ -27,7 +27,7 @@ const traits = [
     kanji: "心",
     romaji: "KOKORO",
     meaning: "Detail Obsessed",
-    desc: "Every pixel, every animation, every interaction — intentional.",
+    desc: "Every pixel, every animation, every interaction -> intentional.",
     color: "#c4b5fd",
   },
 ];
@@ -143,12 +143,12 @@ export default function About() {
                 <span className="text-indigo-400 font-semibold">
                   Project Management System
                 </span>{" "}
-                — real-time chat, sprint planning, role-based dashboards, Google
-                OAuth — the whole thing.
+                - real-time chat, sprint planning, role-based dashboards, Google
+                OAuth - the whole thing.
               </p>
               <p className="text-slate-400 text-base leading-relaxed">
                 Off the screen? I recharge with{" "}
-                <span className="text-violet-400 font-semibold">anime</span> —
+                <span className="text-violet-400 font-semibold">anime</span> -
                 Solo Leveling, JJK, AOT. The same obsession I have for great
                 storytelling, I bring to building great UIs.
               </p>
@@ -164,7 +164,7 @@ export default function About() {
                 className="text-indigo-400 text-xs tracking-widest uppercase mb-5"
                 style={{ fontFamily: "JetBrains Mono, monospace" }}
               >
-                — Origin Story
+                - Origin Story
               </p>
               <div className="flex flex-col gap-0">
                 {timeline.map((item, i) => (
@@ -308,7 +308,7 @@ export default function About() {
                 <span className="text-indigo-400 font-semibold">
                   real-time collaborative PMS
                 </span>{" "}
-                in 4 months during my internship — with Socket.IO, role-based
+                in 4 months during my internship - with Socket.IO, role-based
                 routing, Google OAuth, and a full ShadCN component library. Solo
                 Leveling taught me: you level up by doing hard things.
               </p>
