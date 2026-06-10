@@ -71,11 +71,11 @@ export default function Footer() {
           transition={{ delay: 0.3 }}
           className="text-center mt-6"
         >
-          <p className="text-xs text-slate-700" style={{ fontFamily: "serif" }}>
+          <p className="text-xs text-slate-500" style={{ fontFamily: "serif" }}>
             「諦めなければ、夢は叶う」
           </p>
           <p
-            className="text-[10px] text-slate-800 mt-0.5"
+            className="text-[10px] text-slate-500 mt-0.5"
             style={{ fontFamily: "JetBrains Mono, monospace" }}
           >
             "If you don't give up, dreams come true." — Naruto
