@@ -137,7 +137,7 @@ export default function About() {
               <p className="text-slate-400 text-base leading-relaxed mb-4">
                 During my{" "}
                 <span className="text-indigo-400 font-semibold">
-                  4-month internship
+                  6-month internship
                 </span>{" "}
                 at Tech Elecon, I shipped a full-stack{" "}
                 <span className="text-indigo-400 font-semibold">
