@@ -6,7 +6,7 @@ import resume from "../../assets/resume.pdf";
 
 const stats = [
   { label: "CGPA", value: "9.09", suffix: "/10" },
-  { label: "Experience", value: "4", suffix: " mo" },
+  { label: "Experience", value: "6", suffix: " mo" },
   { label: "Projects", value: "5", suffix: "+" },
   { label: "Skills", value: "15", suffix: "+" },
 ];

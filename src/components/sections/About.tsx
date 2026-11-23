@@ -308,7 +308,7 @@ export default function About() {
                 <span className="text-indigo-400 font-semibold">
                   real-time collaborative PMS
                 </span>{" "}
-                in 4 months during my internship - with Socket.IO, role-based
+                in 6 months during my internship - with Socket.IO, role-based
                 routing, Google OAuth, and a full ShadCN component library. Solo
                 Leveling taught me: you level up by doing hard things.
               </p>
