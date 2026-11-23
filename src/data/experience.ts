@@ -4,7 +4,7 @@ export const experiences = [
     role: "React.js Intern",
     company: "Tech Elecon Pvt. Ltd.",
     location: "Anand, Gujarat",
-    duration: "Jan 2026 – Apr 2026",
+    duration: "Jan 2026 – June 2026",
     type: "Internship",
     rank: "A-RANK",
     color: "#6366f1",
